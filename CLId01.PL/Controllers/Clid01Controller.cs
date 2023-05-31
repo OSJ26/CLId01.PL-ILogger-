@@ -20,13 +20,13 @@ namespace CLId01.PL.Controllers
         public IActionResult GetClid01()
         {
             var data = _objBlll.GetClid01Async();
-
+            _objLogger.LogDebug("This is Trace");
             if (data == null)
             { 
-                _objLogger.LogInformation("Your data is null");
+                _objLogger.LogDebug("Your data is null");
                 return NotFound();
             }
-            _objLogger.LogInformation("Logging working properly");
+            _objLogger.LogWarning("Logging working properly");
              return Ok(data);
         }
     }
